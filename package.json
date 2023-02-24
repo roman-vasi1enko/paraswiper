@@ -1,0 +1,25 @@
+{
+  "name": "paraswiper",
+  "version": "1.0.0",
+  "description": "Youtube anti-spam.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roman-vasi1enko/paraswiper.git"
+  },
+  "keywords": [
+    "youtube",
+    "antispam",
+    "comment",
+    "spam"
+  ],
+  "author": "Roman Vasilenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roman-vasi1enko/paraswiper/issues"
+  },
+  "homepage": "https://github.com/roman-vasi1enko/paraswiper#readme"
+}

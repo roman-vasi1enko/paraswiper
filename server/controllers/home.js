@@ -9,6 +9,6 @@ module.exports = {
     //   res.render("client/public/index.html");
     // },
     getIndex: (req, res) => {
-        res.sendFile(twoStepBack + '/client/src/index.html');
+        res.sendFile(twoStepBack + '/client/public/index.html');
     },
   };

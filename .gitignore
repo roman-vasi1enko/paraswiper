@@ -14,7 +14,8 @@ node_modules
 
 # misc
 .DS_Store
-server/config.env
+.env
+server/config/config.env
 server/.env.local
 server/.env.development.local
 server/.env.test.local

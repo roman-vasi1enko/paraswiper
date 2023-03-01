@@ -1,16 +1,87 @@
+import React, {useState} from 'react'
+import axios from 'axios'
 import { LockClosedIcon } from '@heroicons/react/20/solid'
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../auth/useAuth';
+
+// function Login() {
+
+//   const [loginEmail, setLoginEmail] = useState('');
+//   const [loginPassword, setLoginPassword] = useState('');
+
+//   const login = () => {}
 
 function Login() {
+	let navigate = useNavigate();
+
+	const { handleLogin } = useAuth();
+
+	const [msg, setMsg] = React.useState({
+		text: '',
+		success: false,
+	});
+	const [clearMsg, setClearMsg] = React.useState(false);
+
+	React.useEffect(() => {
+		const clear = setTimeout(() => {
+			setMsg({
+				text: '',
+				success: false,
+			});
+		}, 4000);
+
+		return () => clearTimeout(clear);
+	}, [clearMsg]);
+
+	const [loginData, setLoginData] = React.useState({
+		email: '',
+		password: '',
+	});
+
+	function handleFormChange(event) {
+		const { name, value, type, checked } = event.target;
+		setLoginData(prevloginData => ({
+			...prevloginData,
+			[name]: type === 'checkbox' ? checked : value,
+		}));
+	}
+
+	const handleSubmit = async event => {
+		event.preventDefault();
+		try {
+			const response = await axios({
+				method: 'POST',
+				data: {
+					email: loginData.email,
+					password: loginData.password,
+				},
+				url: 'http://localhost:5000/login',
+				withCredentials: true,
+			});
+			console.log('From Server:', response.data.user);
+			setMsg(
+				{
+					text: response.data.message.msgBody,
+					success: true,
+				},
+				setClearMsg(!clearMsg)
+			);
+			handleLogin(response.data.user);
+			navigate('/wizard');
+		} catch (err) {
+			console.log(err);
+			setMsg(
+				{
+					text: err.response.data.message.msgBody,
+					success: false,
+				},
+				setClearMsg(!clearMsg)
+			);
+		}
+	};
+
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div>
@@ -29,7 +100,7 @@ function Login() {
               </a>
             </p>
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
@@ -37,9 +108,10 @@ function Login() {
                   Email address
                 </label>
                 <input
-                  id="email-address"
+                  id="email"
                   name="email"
                   type="email"
+                  onChange={handleFormChange}
                   autoComplete="email"
                   required
                   className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
@@ -54,6 +126,7 @@ function Login() {
                   id="password"
                   name="password"
                   type="password"
+                  onChange={handleFormChange}
                   autoComplete="current-password"
                   required
                   className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
@@ -94,6 +167,13 @@ function Login() {
               </button>
             </div>
           </form>
+          <div
+					className={
+						msg.success ? 'text-success text-center' : 'text-error text-center'
+					}
+				>
+					{msg ? msg.text : ''}
+				</div>
         </div>
       </div>
     </>

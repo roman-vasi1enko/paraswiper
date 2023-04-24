@@ -3,17 +3,17 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'GitHub', href: 'https://github.com/roman-vasi1enko/paraswiper' },
+  { name: 'Contacts', href: 'https://romanvasilenko.co/' },
+  // { name: 'Marketplace', href: '#' },
+  // { name: 'Company', href: '#' },
 ]
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="isolate bg-white">
+    <div className="isolate bg-slate-900 min-h-screen">
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
         <svg
           className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -39,12 +39,12 @@ export default function Home() {
           </defs>
         </svg>
       </div>
-      <div className="px-6 pt-6 lg:px-8">
+      <div className="px-6 py-6 lg:px-8 mx-14">
         <nav className="flex items-center justify-between" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img className="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+              <span className="sr-only">Paraswiper</span>
+              <img className="h-9" src="./assets/paraswiper-logo2.png" alt="" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -54,21 +54,28 @@ export default function Home() {
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="h-6 w-6 text-slate-200" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-12 text-slate-200 mr-14">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+              <a key={item.name} href={item.href} target="_blank" className="text-sm font-semibold leading-6 hover:text-spring-bud">
                 {item.name}
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">
+          <div className="hidden lg:flex lg:justify-end">
+            <button className="btn btn-outline border-spring-bud">
+              <a href="/login" className="text-sm text-spring-bud">
+                  Log in <span aria-hidden="true">&rarr;</span>
+                </a>
+            </button>
+          </div>
+          {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="/login" className="text-base font-semibold leading-6 text-spring-bud">
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
-          </div>
+          </div> */}
         </nav>
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
@@ -94,6 +101,7 @@ export default function Home() {
                       key={item.name}
                       href={item.href}
                       className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
+                      target="_blank"
                     >
                       {item.name}
                     </a>
@@ -113,40 +121,49 @@ export default function Home() {
         </Dialog>
       </div>
       <main>
-        <div className="relative px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="relative px-6 lg:px-8 bg-white rounded-3xl mx-14">
+          <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-44 text-center">
+              <div class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-500 ring-1 ring-inset ring-green-600/20 mb-4">Alpha version</div>
             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
               <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                Announcing our next round of funding.{' '}
-                <a href="#" className="font-semibold text-indigo-600">
+                No channel access delegation required{' '}
+                <a href="#" className="font-semibold text-lime-600">
                   <span className="absolute inset-0" aria-hidden="true" />
-                  Read more <span aria-hidden="true">&rarr;</span>
+                  {/* Read more <span aria-hidden="true">&rarr;</span> */}
                 </a>
               </div>
             </div>
             <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                    Swipe 99% of Youtube spam comments
+              <h1 className="text-4xl font-bold italic tracking-tight text-lime-800 sm:text-6xl">
+              💨Swipe 99% of Youtube spam comments
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 You went so far as a creator not to manage comments all day long. Meet the most robust Youtube antispam solution, get back the control, protect your community.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="signup"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get started
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                <div className="tooltip" data-tip="Disabled">
+                  <a
+                    // href="/signup"
+                    href="#"
+                    className="rounded-md bg-spring-bud px-3.5 py-2.5 text-sm font-semibold text-gray-600 shadow-sm hover:bg-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    {/* Get started */}
+                    Sign up <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+                {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                   Learn more <span aria-hidden="true">→</span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
           <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
-            <svg
+            {/* <svg
               className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
+              viewBox="0 0 1155 678"
+            > */}
+            <svg
+              className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[32.375rem]"
               viewBox="0 0 1155 678"
             >
               <path

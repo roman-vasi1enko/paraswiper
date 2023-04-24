@@ -10,7 +10,8 @@ const logger = require("morgan");
 const MongoStore = require("connect-mongo");
 const port = process.env.PORT || 5000;
 const mainRoutes = require("./routes/main");
-const path=require('path');
+const bodyParser = require('body-parser');
+
 
 // Set JSX as a view engine\
 app.set('views', '../' + __dirname + 'client/src');
@@ -24,6 +25,7 @@ require("dotenv").config({ path: "./config/config.env" });
 require("./config/passport")(passport);
 
 //Body Parsing
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.static('client'));
 app.use(express.urlencoded({ extended: true }));

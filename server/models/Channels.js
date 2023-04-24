@@ -1,9 +1,9 @@
 const { ObjectId } = require("mongodb");
 const mongoose = require("mongoose");
 
-const UserSchema = new mongoose.Schema({
-  channelID: { type: ObjectId, unique: false },
+const ChannelSchema = new mongoose.Schema({
+  smChannelID: String,
   createdBy: { type: ObjectId, unique: true },
 });
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("Channel", ChannelSchema);

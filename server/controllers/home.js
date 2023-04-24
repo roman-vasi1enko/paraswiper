@@ -11,4 +11,4 @@ module.exports = {
     getIndex: (req, res) => {
         res.sendFile(twoStepBack + '/client/public/index.html');
     },
-  };
+};

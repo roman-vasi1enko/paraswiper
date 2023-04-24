@@ -5,9 +5,27 @@ module.exports = {
     "./public/**/*.{js,jsx,ts,tsx,html}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        '3xl': '2rem',
+      },
+      colors: {
+        'spring-bud': '#A7FC00',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('daisyui'),
   ],
+  daisyui: {
+    styled: true,
+    themes: false,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dark",
+  },
 }

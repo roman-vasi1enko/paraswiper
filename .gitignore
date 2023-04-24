@@ -12,10 +12,16 @@ node_modules
 # production
 /build
 
-# misc
+# configs
 .DS_Store
 .env
-server/config/config.env
+server/config
+# server/config/config.env
+# server/config/client_secrets.json
+client/src/config.js
+server/corePyApp/token.pickle
+
+# misc
 server/.env.local
 server/.env.development.local
 server/.env.test.local

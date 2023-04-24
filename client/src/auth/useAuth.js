@@ -18,7 +18,7 @@ function useAuth() {
 					url: 'http://localhost:5000/authenticated',
 					withCredentials: true,
 				});
-				console.log('From Server:', response);
+				// console.log('From Server:', response);
 				if (response.status === 200) {
 					setAuthed(true);
 					setUser(response.data);
@@ -46,7 +46,7 @@ function useAuth() {
 					url: 'http://localhost:3000//logout',
 					withCredentials: true,
 				});
-				console.log('From Server:', response.data.message.msgBody);
+				// console.log('From Server:', response.data.message.msgBody);
 				setAuthed(false);
 				setUser(null);
 				navigate('/');

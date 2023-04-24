@@ -58,7 +58,7 @@ function Login() {
 				url: 'http://localhost:5000/login',
 				withCredentials: true,
 			});
-			console.log('From Server:', response.data.user);
+			// console.log('From Server:', response.data.user);
 			setMsg(
 				{
 					text: response.data.message.msgBody,

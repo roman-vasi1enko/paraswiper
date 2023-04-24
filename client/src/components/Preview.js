@@ -4,7 +4,7 @@ import axios from 'axios';
 
   
   function Preview({ videos }) {
-    console.log(videos)
+    // console.log(videos)
     // Run corePyScript
 	let navigate = useNavigate();
 
@@ -38,7 +38,7 @@ import axios from 'axios';
                 },
                 setClearMsg(!clearMsg)
                 );
-            console.log('From Server (react):', response);
+            // console.log('From Server (react):', response);
             // navigate('/results');
             navigate('/results', {
                 state: {

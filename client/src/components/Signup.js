@@ -56,7 +56,7 @@ import { useNavigate } from 'react-router-dom';
   
     const handleSubmit = async event => {
       event.preventDefault();
-      console.log(signUpData, 'Sign Up Attempt Sent');
+      // console.log(signUpData, 'Sign Up Attempt Sent');
       try {
         const response = await axios({
           method: 'POST',
@@ -68,7 +68,7 @@ import { useNavigate } from 'react-router-dom';
           url: 'http://localhost:5000/signup',
           withCredentials: true,
         });
-        console.log('From Server:', response);
+        // console.log('From Server:', response);
         setMsg(
           {
             text: response.data.message.msgBody,

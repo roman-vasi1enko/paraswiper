@@ -107,7 +107,7 @@ function Results({ videos }) {
       </>
     )
   } catch (error) {
-    console.log(`Oy, error: ${error}`);
+    console.log(`Error: ${error}`);
     function handleClick() {
       navigate('/wizard')
     }

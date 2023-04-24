@@ -31,7 +31,7 @@ function Actions({ saveSelection, videos }) {
                         withCredentials: true,
                     });
                     
-                    console.log('From Youtube API (delete spam, react):', response);
+                    // console.log('From Youtube API (delete spam, react):', response);
                     
                     navigate('/completed', {
                         state: {
@@ -56,7 +56,7 @@ function Actions({ saveSelection, videos }) {
                         withCredentials: true,
                     });
                     
-                    console.log('From Youtube API (report spam, react):', response);
+                    // console.log('From Youtube API (report spam, react):', response);
                     // console.log(selectedComments)
                     navigate('/completed', {
                         state: {

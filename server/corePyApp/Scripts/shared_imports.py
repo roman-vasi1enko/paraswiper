@@ -10,6 +10,6 @@ F.R = F.RESET
 B.R = B.RESET
 
 # Global Hardcoded Constants
-RESOURCES_FOLDER_NAME = "corePyApp/SpamPurge_Resources"
+RESOURCES_FOLDER_NAME = "corePyApp/Resources"
 
 __all__ = ['os', 'sys', 're', 'traceback', 'F', 'B', 'S', 'init', 'RESOURCES_FOLDER_NAME']

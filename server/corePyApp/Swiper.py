@@ -91,7 +91,7 @@ def main():
         f.write("# new location they will be stored.\n")
                 
     except:
-      print("\nError: Could not create folder. To update the spam lists, try creating a folder called 'SpamPurge_Resources',")
+      print("\nError: Could not create folder. To update the spam lists, try creating a folder called 'Resources',")
       print("       then inside that, create another folder called 'Spam_Lists'.")
       print("Press Enter to continue...")
 
@@ -99,7 +99,7 @@ def main():
     try:
       os.mkdir(spamListFolder)
     except:
-      print("\nError: Could not create folder. To update the spam lists, go into the 'SpamPurge_Resources' folder,")
+      print("\nError: Could not create folder. To update the spam lists, go into the 'Resources' folder,")
       print("       then inside that, create another folder called 'Spam_Lists'.")
 
   # Prepare to check and ingest spammer list files

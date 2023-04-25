@@ -19,7 +19,7 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 //Use .env file in config folder
-require("dotenv").config({ path: "./config/config.env" });
+require("dotenv").config({ path: "./config/.env" });
 
 // Passport config
 require("./config/passport")(passport);

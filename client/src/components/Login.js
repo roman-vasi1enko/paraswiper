@@ -1,3 +1,4 @@
+require('dotenv').config();
 import React, {useState} from 'react'
 import axios from 'axios'
 import { LockClosedIcon } from '@heroicons/react/20/solid'
@@ -55,7 +56,7 @@ function Login() {
 					email: loginData.email,
 					password: loginData.password,
 				},
-				url: 'http://localhost:5000/login',
+				url: `${process.env.API_URL}/login`,
 				withCredentials: true,
 			});
 			// console.log('From Server:', response.data.user);

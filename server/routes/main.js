@@ -9,13 +9,6 @@ const youtubeApiController = require("../controllers/youtubeApi")
 router.get("/", homeController.getIndex);
 
 // Auth routes
-// router.get("/login", authController.getLogin);
-// router.get("/signup", authController.getSignup);
-// router.get("/logout", authController.logout);
-// router.post("/login", authController.postLogin);
-// router.post("/signup", authController.postSignup);
-
-// Auth routes
 router.get('/logout', authController.logout);
 router.get('/authenticated', authController.getAuthenticated);
 router.post('/login', authController.login);

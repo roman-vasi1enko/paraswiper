@@ -1,6 +1,7 @@
 function Alert(type) {
 
-    let alertType = `alert alert-${type.type} shadow-lg w-2/4 mx-auto mt-8`
+    // let alertType = `alert alert-${type.type} shadow-lg lg:w-2/4 mx-auto mt-8`
+    let alertType = `alert alert-success shadow-lg lg:w-2/4 mx-auto mt-8`
     if (!type) {
         alertType = 'alert shadow-lg';
     }

@@ -27,7 +27,7 @@ app.set('view engine', 'jsx');
 app.engine('jsx', createEngine());
 
 // Use .env file
-dotenv.config()
+dotenv.config({ path: './config/.env' })
 
 // Passport config
 passportConfig(passport);

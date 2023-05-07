@@ -1,10 +1,10 @@
-import { set, connect } from "mongoose";
+import mongoose from "mongoose";
 
-set('strictQuery', false);
+mongoose.set('strictQuery', false);
 
 const connectDB = async () => {
   try {
-    const conn = await connect(process.env.DB_STRING);
+    const conn = await mongoose.connect(process.env.DB_STRING);
 
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {

@@ -97,7 +97,7 @@ import axios from 'axios';
                             <div className="chat-bubble"><p>Hey, {videos.items[0].snippet.channelTitle}! It must have been a long way to achieving <strong>{Intl.NumberFormat('en-EN').format(videos.items[0].statistics.viewCount)} views</strong>!</p> <p>Now let's analyze comments and filter spam for you.</p></div>
                     </div>
                     
-                    <div className="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-2 py-10 items-center justify-items-center w-2/3 mx-auto">
+                    <div className="grid grid-cols-1 gap-y-4 lg:grid-cols-2 py-10 items-center justify-items-center w-2/3 mx-auto lg:w-4/5">
 
                         <div className="flex max-w-xs flex-col gap-y-4">
                             <span className="self-start"><a className="font-semibold no-underline hover:underline text-cyan-800 dark:text-cyan-600" href={`https://youtube.com/channel/${videos.items[0].snippet.channelId}`} target="_blank">@{videos.items[0].snippet.channelTitle}</a></span>

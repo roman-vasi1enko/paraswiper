@@ -2,6 +2,8 @@
 # -*- coding: UTF-8 -*-
 from Scripts.shared_imports import *
 import Scripts.validation as validation
+from dotenv import load_dotenv
+from pathlib import Path
 
 # Google Authentication Modules
 from googleapiclient.errors import HttpError
@@ -11,7 +13,9 @@ from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from json import JSONDecodeError
 
-TOKEN_FILE_NAME = 'worker/config/token.pickle'
+load_dotenv()
+
+TOKEN_FILE_NAME = eval(os.getenv('TOKEN_PICKLE'))
 
 global CURRENTUSER
 global YOUTUBE
@@ -39,28 +43,28 @@ def initialize():
 # Authorize the request and store authorization credentials.
 def get_authenticated_service():
   global YOUTUBE
-  CLIENT_SECRETS_FILE = 'worker/config/client_secrets.json'
+  CLIENT_SECRETS_FILE = eval(os.getenv('CLIENT_SECRETS'))
   YOUTUBE_READ_WRITE_SSL_SCOPE = ['https://www.googleapis.com/auth/youtube.force-ssl']
   API_SERVICE_NAME = 'youtube'
   API_VERSION = 'v3'
   DISCOVERY_SERVICE_URL = "https://youtube.googleapis.com/$discovery/rest?version=v3" # If don't specify discovery URL for build, works in python but fails when running as EXE
 
   # Check if client_secrets.json file exists, if not give error
-  if not os.path.exists(CLIENT_SECRETS_FILE):
-    # In case people don't have file extension viewing enabled, they may add a redundant json extension
-    if os.path.exists(f"{CLIENT_SECRETS_FILE}.json"):
-      CLIENT_SECRETS_FILE = CLIENT_SECRETS_FILE + ".json"
-    else:
-      print(f"\n         ----- {F.WHITE}{B.RED}[!] Error:{S.R} client_secrets.json file not found -----")
-      print(f" ----- Did you create a {F.YELLOW}Google Cloud Platform Project{S.R} to access the API? ----- ")
-      print("\nPress Enter to Exit...")
-      sys.exit()
+  # if not os.path.exists(CLIENT_SECRETS_FILE):
+  #   # In case people don't have file extension viewing enabled, they may add a redundant json extension
+  #   if os.path.exists(f"{CLIENT_SECRETS_FILE}.json"):
+  #     CLIENT_SECRETS_FILE = CLIENT_SECRETS_FILE + ".json"
+  #   else:
+  #     print(f"\n         ----- {F.WHITE}{B.RED}[!] Error:{S.R} client_secrets.json file not found -----")
+  #     print(f" ----- Did you create a {F.YELLOW}Google Cloud Platform Project{S.R} to access the API? ----- ")
+  #     print("\nPress Enter to Exit...")
+  #     sys.exit()
 
   creds = None
   # The file token.pickle stores the user's access and refresh tokens, and is
   # created automatically when the authorization flow completes for the first time.
-  if os.path.exists(TOKEN_FILE_NAME):
-    creds = Credentials.from_authorized_user_file(TOKEN_FILE_NAME, scopes=YOUTUBE_READ_WRITE_SSL_SCOPE)
+  # if os.path.exists(TOKEN_FILE_NAME):
+  creds = Credentials.from_authorized_user_info(TOKEN_FILE_NAME, scopes=YOUTUBE_READ_WRITE_SSL_SCOPE)
 
   # If there are no (valid) credentials available, make the user log in.
   if not creds or not creds.valid:
@@ -68,7 +72,7 @@ def get_authenticated_service():
       creds.refresh(Request())
     else:
       print(f"\nPlease {F.YELLOW}login using the browser window{S.R} that opened just now.\n")
-      flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS_FILE, scopes=YOUTUBE_READ_WRITE_SSL_SCOPE)
+      flow = InstalledAppFlow.from_client_config(CLIENT_SECRETS_FILE, scopes=YOUTUBE_READ_WRITE_SSL_SCOPE)
       creds = flow.run_local_server(host="https://paraswiper.com", port=3003, authorization_prompt_message="Waiting for authorization. See message above.", redirect_uri_trailing_slash=False)
       print(f"{F.GREEN}[OK] Authorization Complete.{S.R}")
       # Save the credentials for the next run

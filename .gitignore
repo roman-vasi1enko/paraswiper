@@ -13,7 +13,6 @@ client/build
 # configs
 .DS_Store
 .env
-worker/config
 
 # misc
 .vscode

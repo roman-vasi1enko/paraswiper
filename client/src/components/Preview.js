@@ -107,7 +107,7 @@ import axios from 'axios';
                             <dt className="text-base text-gray-800 text-start font-bold">{videos.items[0].snippet.title}</dt>
                         </div>
 
-                        <div className="stats stats-vertical shadow">
+                        <div className="stats stats-vertical shadow text-center">
     
                             <div className="stat">
                                 <div className="stat-title">Views</div>

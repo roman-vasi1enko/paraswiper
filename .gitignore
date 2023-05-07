@@ -1,0 +1,23 @@
+# dependencies
+/node_modules
+node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+client/build
+
+# configs
+.DS_Store
+.env
+worker/config
+
+# misc
+.vscode
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

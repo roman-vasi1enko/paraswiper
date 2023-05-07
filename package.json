@@ -1,0 +1,21 @@
+{
+    "name": "paraswiper",
+    "version": "1.0.0",
+    "type":"module",
+    "dependencies": {
+        "bull": "^4.10.4",
+        "express": "^4.17.1",
+        "python-shell": "^5.0.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "throng": "^5.0.0"
+    },
+    "scripts": {
+        "start": "node server/server.js",
+        "postinstall": "cd server && npm install",
+        "heroku-postbuild": "cd client && npm install && npm run build"
+    },
+    "engines": {
+        "node": "18.2.0"
+    }
+}

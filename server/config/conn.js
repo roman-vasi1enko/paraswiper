@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 dotenv.config({ path: './../.env' })
+=======
+const mongoose = require("mongoose");
+>>>>>>> main-holder
 
 mongoose.set('strictQuery', false);
 
@@ -15,4 +19,8 @@ const connectDB = async () => {
   }
 };
 
+<<<<<<< HEAD
 export default connectDB
+=======
+module.exports = connectDB
+>>>>>>> main-holder

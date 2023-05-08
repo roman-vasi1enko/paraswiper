@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import './App.css'
+=======
+// import logo from './logo.svg';
+// import './App.css';
+>>>>>>> main-holder
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { RequireAuth } from './auth/RequireAuth'
@@ -9,12 +14,20 @@ import Signup from './components/Signup'
 import Preview from './components/Preview'
 import Results from './components/Results'
 import FinalScreen from './components/FinalScreen'
+<<<<<<< HEAD
 import axios from 'axios';
 
 function App() {
   const host = process.env.NODE_ENV === 'production' ? 'https://paraswiper.com' : 'http://localhost:5000';
 
   let [videos, setVideos] = useState({})
+=======
+import { YOUTUBE_API } from './config'
+
+function App() {
+  let [videos, setVideos] = useState({})
+  // let videos = {};
+>>>>>>> main-holder
 
     // Check video views
     const checkVideo = async (videoUrl) => {
@@ -36,6 +49,7 @@ function App() {
         }
       }
 
+<<<<<<< HEAD
       const videoInfo = await axios({
         method: 'POST',
         data: {
@@ -49,6 +63,24 @@ function App() {
 
   return (
     <>
+=======
+      const videoInfoAPI = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id=${getIdFromUrl(videoUrl)}&key=${YOUTUBE_API}`
+
+      let data = await fetch(videoInfoAPI)
+          .then(res => res.json())
+          .catch(err => {
+              console.log(`error ${err}`)
+          });
+
+      setVideos(data)
+
+      // console.log(Object.keys(videos).length)
+
+    }
+
+  return (
+    <div>
+>>>>>>> main-holder
       <Routes>
         <Route path='/' element={ <Home /> } />
         <Route path='/login' element={ <Login /> } />
@@ -73,8 +105,13 @@ function App() {
         } 
         />
       </Routes>
+<<<<<<< HEAD
     </>
   )
+=======
+    </div>
+  );
+>>>>>>> main-holder
 }
 
 export default App;

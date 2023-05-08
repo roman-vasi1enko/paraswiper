@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { Schema, model } from "mongoose";
 
 const CommentSchema = new Schema(
+=======
+const mongoose = require("mongoose");
+
+const CommentSchema = new mongoose.Schema(
+>>>>>>> main-holder
   [{
     authorID: String,
     parentAuthorID: String,
@@ -14,4 +20,8 @@ const CommentSchema = new Schema(
   }],
 );
 
+<<<<<<< HEAD
 export default model("AllComments", CommentSchema);
+=======
+module.exports = mongoose.model("AllComments", CommentSchema);
+>>>>>>> main-holder

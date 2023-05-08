@@ -21,6 +21,11 @@ function Results({ videos }) {
     let analyzedRate = Math.round(countAnalyzed / totalComments * 100);
     let spamRate = totalSpam / countAnalyzed * 100;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> main-holder
     // remove duplicates from spam comments
     // let uniqueComments = [...new Map(spamComment.map(v => [v.authorID + '|' + v.text, v])).values()];
 
@@ -33,7 +38,11 @@ function Results({ videos }) {
           <li className="step w-40">Swipe Spam</li>
         </ul>
 
+<<<<<<< HEAD
         <div className="grid grid-cols-1 gap-y-4 lg:grid-cols-2 items-center justify-items-center gap-10 my-8 lg:w-4/5 mx-auto">
+=======
+        <div className="flex justify-center items-center gap-10 my-8">
+>>>>>>> main-holder
         
           <div className="card card-compact w-96 h-72 bg-base-100 shadow-xl">
             <figure><img src={videos.items[0].snippet.thumbnails.standard.url} alt="Video Thumbnail" /></figure>
@@ -105,6 +114,7 @@ function Results({ videos }) {
       </>
     )
   } catch (error) {
+<<<<<<< HEAD
       console.log(`Error: ${error}`);
       function handleClick() {
         navigate('/wizard')
@@ -121,6 +131,26 @@ function Results({ videos }) {
         </>
     )
   }
+=======
+    console.log(`Error: ${error}`);
+    function handleClick() {
+      navigate('/wizard')
+    }
+    return (
+      <>
+        <div className="alert alert-error shadow-lg w-2/4 mx-auto mt-8">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>Sorry, something went wrong. Please, try again.</span>
+          </div>
+        <button onClick={handleClick} className="btn btn-outline">Try again</button>
+        </div>
+      </>
+    )
+  }
+
+  
+>>>>>>> main-holder
 }
   
   export default Results;

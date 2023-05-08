@@ -13,12 +13,21 @@ function Wizard({ onAdd }) {
         }
 
         onAdd( videoUrl );
+<<<<<<< HEAD
+=======
+        // setVideoUrl('');
+>>>>>>> main-holder
   }
 
     return (
       <>
+<<<<<<< HEAD
         <div className="bg-gray-100 py-10 px-3">
           <div className="mx-auto lg:w-3/4">
+=======
+        <div className="bg-gray-100 p-10">
+          <div className="w-3/5 mx-auto">
+>>>>>>> main-holder
 
             <ul className="steps pb-10 flex justify-center">
               <li className="step w-40 step-primary">Choose Video</li>
@@ -32,8 +41,13 @@ function Wizard({ onAdd }) {
                   <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
                     <div className="grid grid-cols-3 gap-6">
                       <div className="col-span-4 sm:col-span-3">
+<<<<<<< HEAD
                         <label htmlFor="youtube-video" className="block text-md font-medium text-gray-700">
                         Paste a Youtube video link:
+=======
+                        <label htmlFor="youtube-video" className="block text-sm font-medium text-gray-700">
+                        Choose a video from Youtube and paste its link below:
+>>>>>>> main-holder
                         </label>
                         <div className="mt-2 flex rounded-md shadow-sm">
                           <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500">
@@ -44,7 +58,11 @@ function Wizard({ onAdd }) {
                             value={videoUrl}
                             onChange={(e) => setVideoUrl(e.target.value)}
                             name="videoUrl"
+<<<<<<< HEAD
                             className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 text-sm"
+=======
+                            className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-xs"
+>>>>>>> main-holder
                             placeholder="https://www.youtube.com/watch?v=XXXXXXXXXXX"
                           />
                         </div>

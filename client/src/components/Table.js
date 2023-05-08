@@ -4,9 +4,17 @@ import Actions from "./Actions";
 import Alert from "./Alert";
 
 function Table({ scanResults, videos }) {
+<<<<<<< HEAD
     const [checked, setChecked] = useState(new Array(scanResults[0].length).fill(true));
 
     if (scanResults[0].length) {
+=======
+    // const [checked, setChecked] = useState(true);
+    const [checked, setChecked] = useState(new Array(scanResults[0].length).fill(true));
+
+    if (scanResults[0].length) {
+    
+>>>>>>> main-holder
         const checkboxes = document.getElementsByName("selectComment");
 
         const toggleCheckboxes = (event, id) => {
@@ -27,7 +35,13 @@ function Table({ scanResults, videos }) {
             Array.from(checkboxes).map((box, i) => box.checked ? selectedIDs.push(scanResults[0][i].commentID) : box)
             
             return selectedIDs;
+<<<<<<< HEAD
         }
+=======
+
+        }
+        
+>>>>>>> main-holder
 
         return (
             <>
@@ -75,6 +89,12 @@ function Table({ scanResults, videos }) {
     else {
         return <Alert type='success' />;
     }
+<<<<<<< HEAD
 }
+=======
+
+    
+    }
+>>>>>>> main-holder
 
 export default Table;

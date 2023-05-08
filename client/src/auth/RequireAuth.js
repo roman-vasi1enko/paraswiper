@@ -15,6 +15,7 @@ export const RequireAuth = ({ children }) => {
 	}, [authed, navigate]);
 
 	return (
+<<<<<<< HEAD
 		<>
 			<div>
 				{/* If app is loaded, we are passing the user and isAuthenticated values as a global state */}
@@ -29,5 +30,19 @@ export const RequireAuth = ({ children }) => {
 				)}
 			</div>
 		</>
+=======
+		<div>
+			{/* If app is loaded, we are passing the user and isAuthenticated values as a global state */}
+			{authed ? (
+				children
+			) : (
+				<div>
+					<div className='flex justify-center mt-10'>
+						<button className='btn loading text-base-100'>loading</button>
+					</div>
+				</div>
+			)}
+		</div>
+>>>>>>> main-holder
 	);
 };

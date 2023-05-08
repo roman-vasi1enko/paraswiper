@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { Schema, model } from "mongoose";
 
 const SpamCommentSchema = new Schema({
+=======
+const mongoose = require("mongoose");
+
+const SpamCommentSchema = new mongoose.Schema({
+>>>>>>> main-holder
     commentID: {type: String, unique: true},
     text: String,
     textUnsanitized: String,
@@ -15,4 +21,8 @@ const SpamCommentSchema = new Schema({
     reported: Boolean,
 });
 
+<<<<<<< HEAD
 export default model("SpamComments", SpamCommentSchema);
+=======
+module.exports = mongoose.model("SpamComments", SpamCommentSchema);
+>>>>>>> main-holder

@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "paraswiper-server",
-=======
-  "name": "paraswiper",
->>>>>>> main-holder
   "version": "1.0.0",
   "description": "youtube anti-spam",
   "main": "index.js",
@@ -11,19 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./server.js"
   },
-<<<<<<< HEAD
   "type": "module",
-=======
->>>>>>> main-holder
   "author": "Roman Vasilenko",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/local-auth": "^2.1.1",
     "bcrypt": "^5.1.0",
-<<<<<<< HEAD
     "bull": "^4.10.4",
-=======
->>>>>>> main-holder
     "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

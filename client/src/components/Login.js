@@ -1,29 +1,13 @@
-<<<<<<< HEAD
-=======
-require('dotenv').config();
->>>>>>> main-holder
 import React, {useState} from 'react'
 import axios from 'axios'
 import { LockClosedIcon } from '@heroicons/react/20/solid'
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../auth/useAuth';
 
-<<<<<<< HEAD
 function Login() {
 	let navigate = useNavigate();
   const host = process.env.NODE_ENV === 'production' ? 'https://paraswiper.com' : 'http://localhost:5000';
 
-=======
-// function Login() {
-
-//   const [loginEmail, setLoginEmail] = useState('');
-//   const [loginPassword, setLoginPassword] = useState('');
-
-//   const login = () => {}
-
-function Login() {
-	let navigate = useNavigate();
->>>>>>> main-holder
 
 	const { handleLogin } = useAuth();
 
@@ -66,11 +50,7 @@ function Login() {
 					email: loginData.email,
 					password: loginData.password,
 				},
-<<<<<<< HEAD
 				url: `${host}/login`,
-=======
-				url: `${process.env.API_URL}/login`,
->>>>>>> main-holder
 				withCredentials: true,
 			});
 			// console.log('From Server:', response.data.user);
@@ -174,17 +154,10 @@ function Login() {
             <div>
               <button
                 type="submit"
-<<<<<<< HEAD
                 className="group relative flex w-full justify-center rounded-md bg-spring-bud px-10 py-2.5 text-sm font-semibold text-gray-600 shadow-sm hover:bg-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <LockClosedIcon className="h-5 w-5 text-lime-600 group-hover:text-lime-700" aria-hidden="true" />
-=======
-                className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
->>>>>>> main-holder
                 </span>
                 Sign in
               </button>

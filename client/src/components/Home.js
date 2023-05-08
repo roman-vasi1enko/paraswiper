@@ -119,9 +119,9 @@ export default function Home() {
             </Dialog.Panel>
           </Dialog>
         </div>
-        <main>
+        <main className='pb-16'>
           <div className="relative px-6 lg:px-8 bg-white rounded-3xl mx-6 lg:mx-auto lg:w-3/4 shadow-lg shadow-spring-bud">
-            <div className="mx-auto max-w-2xl py-24 sm:py-32 text-center">
+            <div className="mx-auto max-w-2xl py-12 sm:py-32 text-center">
               <div className="tooltip cursor-pointer" data-tip="This is a very first version of the software. It was tested to do the job but has some known and unknown bugs.">
                 <div class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-sm font-medium text-green-500 ring-1 ring-inset ring-green-600/20 mb-4">Alpha version</div>
               </div>
@@ -170,7 +170,7 @@ export default function Home() {
                 viewBox="0 0 1155 678"
               > */}
               <svg
-                className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[32.375rem]"
+                className="relative left-[calc(50%+3rem)] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[32.375rem]"
                 viewBox="0 0 1155 378"
               >
                 <path

@@ -31,7 +31,7 @@ function Table({ scanResults, videos }) {
 
         return (
             <>
-                <div className="overflow-x-auto w-2/4 mx-auto mt-8">
+                <div className="overflow-x-auto w-4/5 mx-auto mt-8 max-w-4xl">
                 <Actions saveSelection={saveSelection} videos={videos} />
                     <table className="table w-full">
 

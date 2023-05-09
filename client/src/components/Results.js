@@ -33,7 +33,7 @@ function Results({ videos }) {
           <li className="step w-40">Swipe Spam</li>
         </ul>
 
-        <div className="grid grid-cols-1 gap-y-4 lg:grid-cols-2 items-center justify-items-center gap-10 my-8 lg:w-4/5 mx-auto">
+        <div className="grid grid-cols-1 gap-y-4 lg:grid-cols-2 items-center justify-items-center gap-10 my-8 lg:w-4/5 mx-auto max-w-4xl">
         
           <div className="card card-compact w-96 h-72 bg-base-100 shadow-xl">
             <figure><img src={videos.items[0].snippet.thumbnails.standard.url} alt="Video Thumbnail" /></figure>

@@ -86,7 +86,7 @@ function Actions({ saveSelection, videos }) {
 
     return (
         <>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center flex-col lg:flex-row">
                 <span>Choose an option:</span>
                 <select onChange={e => handleSelect(e)} className="select select-primary max-w-xs my-8 ml-2" id="actionSelector" >
                     <option disabled selected>Actions</option>

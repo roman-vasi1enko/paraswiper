@@ -18,7 +18,7 @@ function Comment({ comment, toggleCheckbox, index, checked }) {
                         </div>
                         <div>
                         <div className="font-bold">{comment.authorName}</div>
-                        <div className="text-sm opacity-90 whitespace-normal w-72">{comment.text}</div>
+                        <div className="text-sm opacity-90 whitespace-normal w-40 lg:w-64">{comment.text}</div>
                         </div>
                     </div>
                 </td>

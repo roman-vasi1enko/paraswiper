@@ -2,7 +2,9 @@
 Paraswiper fetches comments on any YouTube video, scans them through, and filters out spam, scam, and impersonators. The user can instantly report spam comments to the YouTube moderation team or remove them.
 <br>
 
-🔗 <strong>Link to project:</strong> [https://paraswiper.com/](https://paraswiper.com/)
+🔗 <strong>[Project Link*](https://paraswiper.com/)</strong> 
+<br>
+👀 <strong>[Watch Demo](https://www.youtube.com/watch?v=gsWL2c-xb78)</strong> 
 
 <img src="https://github.com/roman-vasi1enko/files/blob/main/paraswiper-readme-assets/paraswiper-home.png?raw=true"  width="700" style="border-radius: 20px; display: block; margin: auto">
 
